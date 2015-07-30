@@ -10,7 +10,8 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
-    var objects = [AnyObject]()
+    var objects = [String]()
+    var allWords = [String]()
 
 
     override func awakeFromNib() {
@@ -41,8 +42,8 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let object = objects[indexPath.row]
+        cell.textLabel!.text = object
         return cell
     }
 
