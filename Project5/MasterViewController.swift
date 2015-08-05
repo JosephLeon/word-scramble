@@ -21,6 +21,8 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "promptForAnswer")
+        
         if let startWordsPath = NSBundle.mainBundle().pathForResource("start", ofType: "txt") {
             if let startWords = NSString(contentsOfFile: startWordsPath, usedEncoding: nil, error: nil) {
                 allWords = startWords.componentsSeparatedByString("\n") as! [String]
