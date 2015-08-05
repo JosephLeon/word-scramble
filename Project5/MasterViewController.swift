@@ -40,6 +40,20 @@ class MasterViewController: UITableViewController {
         objects.removeAll(keepCapacity: true)
         tableView.reloadData()
     }
+    
+    func promptForAnswer() {
+        let ac = UIAlertController(title: "Enter Answer", message: nil, preferredStyle: .Alert)
+        ac.addTextFieldWithConfigurationHandler(nil)
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .Default) { [unowned self, ac] (action: UIAlertAction!) in
+            let answer = ac.textFields![0] as! UITextField
+            self.submitAnswer(answer.text)
+        }
+        
+        ac.addAction(submitAction)
+        
+        presentViewController(ac, animated: true, completion: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
