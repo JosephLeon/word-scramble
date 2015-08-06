@@ -75,7 +75,7 @@ class MasterViewController: UITableViewController {
     }
     
     func wordIsOriginal(word: String) -> Bool {
-        return true
+        return !contains(objects, word)
     }
     
     func wordIsReal(word: String) -> Bool {
