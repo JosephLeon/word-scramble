@@ -9,15 +9,15 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
-
+    
     var objects = [String]()
     var allWords = [String]()
-
-
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,32 +54,59 @@ class MasterViewController: UITableViewController {
         
         presentViewController(ac, animated: true, completion: nil)
     }
-
+    
+    func submitAnswer(answer: String) {
+        let lowerAnswer = answer.lowercaseString
+        
+        if wordIsPossible(lowerAnswer) {
+            if wordIsOriginal(lowerAnswer) {
+                if wordIsReal(lowerAnswer) {
+                    objects.insert(answer, atIndex: 0)
+                    
+                    let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+                    tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                }
+            }
+        }
+    }
+    
+    func wordIsPossible(word: String) -> Bool {
+        return true
+    }
+    
+    func wordIsOriginal(word: String) -> Bool {
+        return true
+    }
+    
+    func wordIsReal(word: String) -> Bool {
+       return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Segues
-
+    
     // MARK: - Table View
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-
+        
         let object = objects[indexPath.row]
         cell.textLabel!.text = object
         return cell
     }
-
-
+    
+    
 }
 
