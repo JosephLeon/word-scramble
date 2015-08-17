@@ -91,8 +91,12 @@ class MasterViewController: UITableViewController {
         return !contains(objects, word)
     }
     
-    func wordIsReal(word: String) -> Bool {
-       return true
+    func wordIsReal(word: NSString) -> Bool {
+        let checker = UITextChecker();
+        let range = NSMakeRange(0, word.length)
+        let misspelledRange = checker.rangeOfMisspelledWordInString(word as String, range: range, startingAt: 0, wrap: false, language: "en")
+        
+        return misspelledRange.location == NSNotFound
     }
     
     override func didReceiveMemoryWarning() {
