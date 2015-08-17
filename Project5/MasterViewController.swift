@@ -65,8 +65,20 @@ class MasterViewController: UITableViewController {
                     
                     let indexPath = NSIndexPath(forRow: 0, inSection: 0)
                     tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                } else {
+                    let ac = UIAlertController(title: "Word not recognised", message: "You can't just make them up, you know!", preferredStyle: .Alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    presentViewController(ac, animated: true, completion: nil)
                 }
+            } else {
+                let ac = UIAlertController(title: "Word used already", message: "Be more original!", preferredStyle: .Alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                presentViewController(ac, animated: true, completion: nil)
             }
+        } else {
+            let ac = UIAlertController(title: "Word not possible", message: "You can't spell that word from '\(title!.lowercaseString)'!", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
         }
     }
     
