@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>D2F771AF-4D57-413B-B2BC-556C4237C1FE</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Project5</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>DD616709EB945F9247D94DC792412426B0EA0BA2</key>
 		<string>github.com:JosephLeon/word-scramble.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Project5.xcodeproj/project.xcworkspace</string>
+	<string>Project5.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>DD616709EB945F9247D94DC792412426B0EA0BA2</key>
